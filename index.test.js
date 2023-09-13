@@ -5,12 +5,12 @@ test('test1', () => {
 })
 
 test('test2', () => {
-    console.log('console error')
+    console.error('console error')
 })
 
 test('test3', (done) => {
     setTimeout(() => {
+        console.error('console error timeout')
         done();
-        console.log('console error timeout')
     },2000)
 })
