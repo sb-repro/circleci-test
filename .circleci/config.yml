@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "fail"
-          command: yarn install && yarn jest --forceExit
+          command: yarn install && yarn jest
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
