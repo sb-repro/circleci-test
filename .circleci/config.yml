@@ -1,29 +1,18 @@
 version: 2.1
 
 jobs:
-  say-hello-1:
+  say-hello:
     docker:
       - image: cimg/node:16.20.2
     steps:
       - checkout
       - run:
           name: "fail"
-          command: node index.js fail
-  say-hello-2:
-    docker:
-      - image: cimg/node:16.20.2
-    steps:
-      - checkout
-      - run:
-          name: "success"
-          command: node index.js
+          command: yarn install && yarn jest
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  case-success:
+  test-case:
     jobs:
-      - say-hello-2
-  case-fail:
-    jobs:
-      - say-hello-1
+      - say-hello
