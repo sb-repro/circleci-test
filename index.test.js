@@ -8,9 +8,8 @@ test('test2', () => {
     console.error('console error')
 })
 
-test('test3', (done) => {
+test('test3', () => {
     setTimeout(() => {
         console.error('console error timeout')
-        done();
     },2000)
 })
